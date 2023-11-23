@@ -36,8 +36,10 @@ public class StatsService {
 
     public int calcMonthsWithSalesBelowAverage(int[] sales) {
         int countMonths = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < getAllSalesAverage(sales)) {
+        int averageSales = getAllSalesAverage(sales);
+        for (int sale : sales) {
+
+            if (sale < averageSales) {
                 countMonths++;
             }
         }
@@ -46,8 +48,11 @@ public class StatsService {
 
     public int calcMonthsWithSalesAboveAverage(int[] sales) {
         int count = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > getAllSalesAverage(sales)) {
+        int averageSales = getAllSalesAverage(sales);
+        for (int sale : sales) {
+
+
+            if (sale > averageSales) {
                 count++;
             }
         }
